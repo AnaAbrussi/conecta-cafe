@@ -1,2 +1,2 @@
-# conecta-cafe
-Projeto em desenvolvimento de um WebSite para uma cafeteria com ASP.NET MVC C#
+# conecta-caf-
+Projeto de desenvolvimento de um WebSite para uma Cafeteria com ASP.NET MVC C#
