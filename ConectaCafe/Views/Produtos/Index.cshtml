@@ -11,48 +11,53 @@
                 <div
                     class="bg-gradient-warning shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
                     <h5 class="text-white text-capitalize ps-3 m-0">@ViewData["Title"]</h5>
-                    <a asp-action="Create" class="text-white text-capitalize ps-3 me-3 d-flex align-items-center"><i
-                            class="material-icons me-2">add</i>Adicionar</a>
+                    <a asp-action="Create" class="text-white text-capitalize ps-3 me-3 d-flex align-items-center">
+                        <i class="material-icons me-2">add</i> Adicionar
+                    </a>
                 </div>
             </div>
             <div class="card-body pb-2">
                 <div class="table-responsive p-0">
                     <table id="dataTable" class="table align-items-center justify-content-center mb-0 w-100">
-                        <thead>
+                        <thead class="p-0">
                             <tr>
-                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Nome
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Nome
                                 </th>
-                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Categoria
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Categoria
                                 </th>
-                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">Preço
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 text-start">
+                                    Preço
                                 </th>
-                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7 ps-2">
-                                    Ações</th>
+                                <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">
+                                    Ações
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td class="text-dark text-start">
+                                    <td class="text-dark text-sm">
                                         @Html.DisplayFor(modelItem => item.Nome)
                                     </td>
                                     <td class="text-dark text-sm">
                                         @Html.DisplayFor(modelItem => item.Categoria.Nome)
                                     </td>
-                                    <td class="text-dark text-sm">
+                                    <td class="text-dark text-sm text-start">
                                         @Html.DisplayFor(modelItem => item.Preco)
                                     </td>
-                                    <td>  
+                                    <td>
                                         <a asp-action="Edit" asp-route-id="@item.Id" title="Alterar">
                                             <i class="material-icons me-2">edit</i>
-                                            </a>
+                                        </a>
                                         <a asp-action="Details" asp-route-id="@item.Id" title="Detalhes">
                                             <i class="material-icons me-2">search</i>
-                                            </a>
+                                        </a>
                                         <a asp-action="Delete" asp-route-id="@item.Id" title="Excluir">
                                             <i class="material-icons me-2">delete</i>
-                                            </a>
+                                        </a>
                                     </td>
                                 </tr>
                             }
@@ -66,17 +71,17 @@
 
 @section Scripts
 {
-<script>
-   let dataTable = new DataTable('#dataTable', {
-       language: {
-        url: 'https://cdn.datatables.net/plug-ins/2.0.3/i18n/pt-BR.json'
-       },
-       initComplete: function(settings, json) {
-        document.querySelector('.dt-length').classList.add('text-sx');
-        document.querySelector('search').classList.add('text-sx');
-        document.querySelector('info').classList.add('text-sx');
-        document.querySelector('paging').classList.add('text-sx');
-       }
-   });
-</script>
+    <script>
+        let datatable = new DataTable('#dataTable', {
+            language: {
+                url: '../../lib/datatables/pt-BR.json'
+            },
+            initComplete: function(settings, json) {
+                document.querySelector('.dt-length').classList.add('text-xs');
+                document.querySelector('.dt-search').classList.add('text-xs');
+                document.querySelector('.dt-info').classList.add('text-xs');
+                document.querySelector('.dt-paging').classList.add('text-xs');
+            }
+        });
+    </script>
 }

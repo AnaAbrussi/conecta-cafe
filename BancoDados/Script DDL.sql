@@ -32,13 +32,13 @@ create table Avaliacao
 	Texto		varchar(500) not null,
 	Nota		decimal(1,0) not null,
 	DataAvaliacao date,
+	Foto		varchar(200),
 	constraint PK_Avaliacao primary key(Id)
 );
 
 create table Blog
 (
 	Id			int not null identity,
-	Titulo		varchar(100) not null,
 	Texto		varchar(500) not null,
 	Foto		varchar(200),
 	DataBlog	datetime,

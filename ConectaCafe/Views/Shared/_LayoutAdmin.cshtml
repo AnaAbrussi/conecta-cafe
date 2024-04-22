@@ -35,7 +35,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" href="~/assets/css/material-dashboard.css?v=3.1.0" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
 </head>
 
 <body class="g-sidenav-show bg-gray-200" class="min-vh-100">
@@ -80,7 +80,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class='nav-link text-white @(ViewData["Title"].ToString() == "Cores" ? "active bg-gradient-warning" : "")' asp-controller="Cores" asp-action="Index">
+          <a class='nav-link text-white @(ViewData["Title"].ToString() == "Blog" ? "active bg-gradient-warning" : "")' asp-controller="Blogs" asp-action="Index">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">rss_feed</i>
             </div>
@@ -88,7 +88,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class='nav-link text-white @(ViewData["Title"].ToString() == "Tamanhos" ? "active bg-gradient-warning" : "")' asp-controller="Tamanhos" asp-action="Index">
+          <a class='nav-link text-white @(ViewData["Title"].ToString() == "Avaliações" ? "active bg-gradient-warning" : "")' asp-controller="avaliacoes" asp-action="Index">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">star</i>
             </div>
@@ -107,7 +107,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class='nav-link text-white @(ViewData["Title"].ToString() == "Configurações" ? "active bg-gradient-warning" : "")' asp-controller="Usuarios" asp-action="Index">
+          <a class='nav-link text-white @(ViewData["Title"].ToString() == "Configurações" ? "active bg-gradient-warning" : "")' asp-controller="Configuracoes" asp-action="Index">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">settings</i>
             </div>
@@ -208,8 +208,8 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="~/assets/js/material-dashboard.js"></script>
- <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
- <script src="~/assets/js/site.js"><</script>
+  <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+  <script src="~/assets/js/site.js"></script>
   @await RenderSectionAsync("Scripts", required: false)
 </body>
 
